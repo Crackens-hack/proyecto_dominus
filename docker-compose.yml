@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  tts:
+    build: ./motor-tts
+    container_name: dominus_tts
+    volumes:
+      - ./audios:/app/audios
+      - ~/.local/share/tts:/root/.local/share/tts
+
+  bark:
+    build: ./motor-bark
+    container_name: dominus_bark
+    volumes:
+      - ./audios:/app/audios
+
+  sadtalker:
+    build: ./motor-sadtalker
+    container_name: dominus_sadtalker
+    volumes:
+      - ./audios:/app/audios
+      - ./avatar:/app/avatar
+      - ./videos:/app/videos
